@@ -1,0 +1,8 @@
+BLOG APP
+
+1. will have multi roles for user -> normal, admin
+2. When user posts a blog admin can reject or accept
+3 a blog can have multiple tags and also tags can have multiple blogs
+4. we can filter blogs using tags -> pore korbo
+5. One category can have many blogs
+6. When Admin posts something all the users will receive an email if they active receive notification on email.
