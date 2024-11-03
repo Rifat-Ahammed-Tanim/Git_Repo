@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Category;
-use App\Models\User;
+use App\Models\Blog;
+use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,23 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('blog_tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Blog::class);
 
-            $table->string('title');
-
-            $table->text('content');
-
-
-            $table->boolean('is_approved')
-                ->default(false);
-
-            $table->foreignIdFor(Category::class);
-
-
+            $table->foreignIdFor(Tag::class);
         });
     }
 
@@ -38,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('blog_tags');
     }
 };
